@@ -1,0 +1,12 @@
+.description{
+  color: white;
+}
+
+.layout-class{
+  height: 1000px
+  background-size:   cover;
+  background-repeat: no-repeat;
+  background-image: url("/images/bd.jpg");
+}
+
+  /* --- Welcome Page
