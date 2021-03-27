@@ -54,8 +54,9 @@ class WorkoutController < ApplicationController
 
   delete '/workouts/:id' do
     redirect_if_not_logged_in
-    @workout = Workout.find(params[:id])
-    @workout.destroy
+
+    workout = Workout.find(params[:id])
+    workout.destroy if current_user.workouts.include?(workout)
     redirect '/workouts'
   end
 
