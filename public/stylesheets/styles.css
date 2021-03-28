@@ -16,6 +16,16 @@ p {
 .workouts:hover{
   color:  #ef8172;
 }
+.box-size{
+  font: 10pt arial, helvetica, sans-serif;
+  height: 400px;
+    padding-bottom: 350px;
+    width: 300px;
+    margin: 5px;
+    box-sizing: border-box;
+
+
+}
 .workouts{
   color: red;
 }

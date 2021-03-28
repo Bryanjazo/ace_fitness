@@ -6,13 +6,13 @@
   <% if @workout.user_id == current_user.id %>
     <form action="/workouts/<%= @workout.id %>" method="POST">
       <input type="hidden" name="_method" value="patch">
-      <input type="text" name="name" value="<%=@workout.work_out%>">
-      <input type="text" name="description" value="<%= @workout.description%>">
-      <input type="submit" value="Edit">
+      <input class="box-size" type="text" name="name" value="<%=@workout.work_out%>">
+      <input class="box-size" type="text" name="description" value="<%= @workout.description%>">
+     <button type="submit" name="button"><i class="fas fa-edit"></i></button>
     </form>
     <form class="" action="/workouts/<%= @workout.id %>" method="post">
       <input type="hidden" name="_method" value="Delete">
-      <input type="submit" name="" value="Delete">
+      <button type="submit" name="button"><i class="fas fa-trash-alt"></i></button> 
     </form>
   <% end %>
 </body>

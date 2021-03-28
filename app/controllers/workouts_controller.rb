@@ -8,7 +8,6 @@ class WorkoutController < ApplicationController
     erb :'workout/index'
   end
 
-
   get '/workouts/new' do
     redirect_if_not_logged_in
     erb :'workout/new'
@@ -45,22 +44,14 @@ class WorkoutController < ApplicationController
     workout = Workout.find_by_id(params[:id])
     workout.work_out = params[:name]
     workout.description = params[:description]
-    if workout.save
-      redirect '/workouts'
-    else
-      redirect "/workouts/#{workout.id}/edit"
-    end
+    workout.save if current_user.workouts.include?(workout)
+    redirect '/workouts'
   end
 
   delete '/workouts/:id' do
     redirect_if_not_logged_in
-
     workout = Workout.find(params[:id])
     workout.destroy if current_user.workouts.include?(workout)
     redirect '/workouts'
   end
-
-
-
-
 end
