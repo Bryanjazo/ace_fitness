@@ -16,10 +16,6 @@
       <% @user_workouts.each do |workout| %>
         <li class="workouts">
           <h5><a class="workouts"href="/workouts/<%= workout.id %>"><%= workout.work_out %></a></h5>
-          <form action="/workouts/<%= workout.id%>" method="post">
-            <input type="hidden" name="_method" value="Delete">
-            <button type="submit" name="Delete"></button>
-          </form>
         </li>
       <% end %>
       <br>
