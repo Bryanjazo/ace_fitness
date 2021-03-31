@@ -5,7 +5,7 @@
     <title>Description</title>
     <link rel="stylesheet" href="/stylesheets/style_2.css">
   </head>
-    <h3 class="description"><%= @workout.description %></h3 >
+    <h3 class="description"><%= @workout.description %></h3>
       <% if @workout.user_id == current_user.id %>
     <form action="/workouts/<%= @workout.id %>" method="post">
     <a class="edit" style="color: red" href="/workouts/<%= @workout.id %>/edit">Edit</a>
